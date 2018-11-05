@@ -1,32 +1,204 @@
-.App {
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  background-color: #fefefe;
+  background-image: linear-gradient(to bottom, rgb(121, 182, 218) 0%, rgb(94, 87, 192) 60%, rgb(102, 55, 190) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 20px;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.todo-wrapper {
+  width: 400px;
+  max-width: 100%;
+  min-height: 500px;
+  margin: 20px auto 40px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  background-color: #f4f7fc;
+  overflow: hidden;
+  position: relative;
+}
+
+form {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.btn, input, .btn-delete {
+  line-height: 2em;
+  border-radius: 3px;
+  border: 0;
+  display: inline-block;
+  margin: 15px 0;
+  padding: 0.2em 1em;
+  font-size: 1em;
+}
+
+input[type='text'] {
+  border: 1px solid #ddd; 
+  min-width: 80%;
+  transition: all ease-in 0.25s;
+}
+
+input:focus{
+  outline: none;
+  border: 1px solid #a3b1ff;
+}
+
+input::placeholder{
+  color: rgba(0,0,0,0.3);
+  font-style: italic;
+}
+
+.btn-add {
+  background: #8886fa;
+  color: #fefefe;
+  border-color: #8886fa;
+  min-width: 17%;
+  transition: all ease-in 0.25s;
+  font-size: 2.2em;
+  line-height: 0.5em;
+  padding: 0.33em 0.3em;
+  float: right;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-add:hover{
+  background: #4442f6;
+  border-color: #4442f6;
+}
+
+.btn-add:active{
+  transform: scale(0.95);
+}
+
+.status-free {
+  margin-top: 50px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.status-free img {
+  width: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+li {
+  position: relative;
+  list-style-type: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #e0e8f5;
+  border-radius: 3px;
+  padding: 2px 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-delete {
+  position: absolute;
+  height: 100%;
+  width: 12%;
+  top: -15px;
+  right: 0;
+  cursor: pointer;
+  background-color: #f56468;
+  color: #fff;
+  outline: none;
+  border-radius: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-delete::after{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  background-image: url(img/trash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.clear-todo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.btn-clear {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-clear::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #f56468;
+  bottom: 0px;
+  left: 0;
+  transition: all ease-in 0.25s;
+}
+
+.btn-clear:hover::after {
+  width: 100%;
+}
+
+.author {
+  text-align: center;
+  color: #000;
+}
+
+.author .btn-auth {
+	text-decoration: none;
+  color: #000;
+}
+
+.git-auth {
+  display: block;
+  margin-top: 10px;
+}
+
+.git-auth a {
+  color: #000;
+}
+
+.author a:hover {
+	color: #ddd;
 }
