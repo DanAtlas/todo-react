@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import fireworks from './img/fireworks.svg';
+import Clock from './components/Clock';
 
 class App extends Component {
   state = {
     todoList: [],
     tasks: ''
   };
+
   addtodo = () => {
     let g = this.state.todoList.slice();
     g.push(this.state.tasks)
@@ -57,6 +59,7 @@ class App extends Component {
       <div className="app">
         <h1>ToDo List App</h1>
         <div className="todo-wrapper">
+          <Clock />
           <div className="form">
             <input type="text"
               placeholder="Enter your task..."
